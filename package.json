@@ -1,0 +1,29 @@
+{
+  "name": "skynet-gateway",
+  "version": "0.1.0",
+  "description": "Skynet.im gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skynetim/gateway.git"
+  },
+  "keywords": [
+    "skynet"
+  ],
+  "author": "skynet.im",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skynetim/gateway/issues"
+  },
+  "dependencies": {
+    "skynet": "0.0.17",
+    "uuid": "~1.4.1",
+    "level": "~0.18.0",
+    "when": "~2.8.0",
+    "lodash": "~2.4.1",
+    "rest": "~1.0.0"
+  }
+}
