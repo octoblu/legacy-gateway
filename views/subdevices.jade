@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div(class='')
+    h1= title
+    table(class="table table-striped")
+      thead
+        tr
+          th Name
+          th Plugin Type
+          th Options
+          th remove
+        tbody
+          each val in subdevices
+            tr
+              td= val.name
+              td= val.type
+              td= val.options
+              td
+                button(class="btn btn-danger") X
+

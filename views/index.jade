@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class='jumbotron')
+    h1= title
+    p
+      span Gateway uuid:
+      span(class='label label-primary')= uuid
+    p
+      span Gateway token:
+      span(class='label label-warning')= token
