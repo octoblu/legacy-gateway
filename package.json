@@ -28,6 +28,7 @@
     "ip": "~0.3.0",
     "express": "3.4.8",
     "jade": "*",
-    "skynet-greeting": "~0.1.0"
+    "skynet-greeting": "~0.1.0",
+    "json-schema": "~0.2.2"
   }
 }

@@ -1,10 +1,12 @@
 var npm = require('npm');
 var _ = require('lodash');
-var getPluginsMetaData = require('../lib/getPluginsMetaData');
-var subdevices = require('../lib/subdevices');
+var pluginMetaData = require('../../lib/pluginMetaData');
+var subdevices = require('../../lib/subdevices');
+var resolve = require('./simpleResolver');
+
 
 exports.plugins = function(req, res){
-  getPluginsMetaData()
+  pluginMetaData.getAll()
   .then(function(plugins){
     res.render('plugins', { title: 'Skynet Gateway Plugins', plugins: plugins });
   })
@@ -21,4 +23,12 @@ exports.subdevices = function(req, res){
   .otherwise(function(err){
     res.send(500, err);
   });
+};
+
+exports.createSubdevice = function(req, res){
+  resolve(subdevices.createSubdevice(req.body), res);
+};
+
+exports.deleteSubdevice = function(req, res){
+  resolve(subdevices.deleteSubdevice(req.params.name), res);
 };
