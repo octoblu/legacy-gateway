@@ -18,6 +18,7 @@ function launch(gatewayId, token, port, conn){
   }
 
   var app = express();
+  var parser = express.json();
 
   // all environments
   app.set('port', port);
@@ -25,7 +26,7 @@ function launch(gatewayId, token, port, conn){
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.json());
+  //app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(gatewayMiddleware);
@@ -41,7 +42,7 @@ function launch(gatewayId, token, port, conn){
   app.get('/', routes.index);
   app.get('/plugins', pluginRoute.plugins);
   app.get('/subdevices', pluginRoute.subdevices);
-  app.post('/subdevices', pluginRoute.createSubdevice);
+  app.post('/subdevices', parser, pluginRoute.createSubdevice);
   app.delete('/subdevices/:name', pluginRoute.deleteSubdevice);
 
   var server = http.createServer(app);

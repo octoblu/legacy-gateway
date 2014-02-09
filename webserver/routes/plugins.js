@@ -26,6 +26,7 @@ exports.subdevices = function(req, res){
 };
 
 exports.createSubdevice = function(req, res){
+  console.log('create', req.body);
   resolve(subdevices.createSubdevice(req.body), res);
 };
 
