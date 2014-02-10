@@ -43,9 +43,11 @@ function launch(gatewayId, token, port, conn){
   app.get('/plugins', pluginRoute.plugins);
   app.get('/subdevices', pluginRoute.subdevices);
   app.post('/subdevices', parser, pluginRoute.createSubdevice);
+  app.put('/subdevices', parser, pluginRoute.updateSubdevice);
   app.delete('/subdevices/:name', pluginRoute.deleteSubdevice);
   app.post('/plugins/:name', pluginRoute.installPlugin);
   app.delete('/plugins/:name', pluginRoute.uninstallPlugin);
+  app.put('/plugins/:name', pluginRoute.updatePlugin);
 
   var server = http.createServer(app);
   server.on('error', function(err){

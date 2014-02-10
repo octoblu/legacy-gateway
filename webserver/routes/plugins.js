@@ -30,6 +30,11 @@ exports.createSubdevice = function(req, res){
   resolve(subdevices.createSubdevice(req.body), res);
 };
 
+exports.updateSubdevice = function(req, res){
+  console.log('update', req.body);
+  resolve(subdevices.updateSubdevice(req.body), res);
+};
+
 exports.deleteSubdevice = function(req, res){
   resolve(subdevices.deleteSubdevice(req.params.name), res);
 };
@@ -42,4 +47,9 @@ exports.installPlugin = function(req, res){
 exports.uninstallPlugin = function(req, res){
   console.log('uninstall plugin', req.params.name);
   resolve(subdevices.uninstallPlugin(req.params.name), res);
+};
+
+exports.updatePlugin = function(req, res){
+  console.log('uninstall plugin', req.params.name);
+  resolve(pluginMetaData.update(req.params.name), res);
 };
