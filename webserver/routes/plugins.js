@@ -33,3 +33,13 @@ exports.createSubdevice = function(req, res){
 exports.deleteSubdevice = function(req, res){
   resolve(subdevices.deleteSubdevice(req.params.name), res);
 };
+
+exports.installPlugin = function(req, res){
+  console.log('install plugin', req.params.name);
+  resolve(pluginMetaData.install(req.params.name), res);
+};
+
+exports.uninstallPlugin = function(req, res){
+  console.log('uninstall plugin', req.params.name);
+  resolve(subdevices.uninstallPlugin(req.params.name), res);
+};
