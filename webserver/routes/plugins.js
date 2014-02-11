@@ -39,6 +39,10 @@ exports.deleteSubdevice = function(req, res){
   resolve(subdevices.deleteSubdevice(req.params.name), res);
 };
 
+exports.reloadSubdevice = function(req, res){
+  resolve(subdevices.reload(req.params.name), res);
+};
+
 exports.installPlugin = function(req, res){
   console.log('install plugin', req.params.name);
   resolve(pluginMetaData.install(req.params.name), res);

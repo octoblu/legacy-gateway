@@ -45,6 +45,7 @@ function launch(gatewayId, token, port, conn){
   app.post('/subdevices', parser, pluginRoute.createSubdevice);
   app.put('/subdevices', parser, pluginRoute.updateSubdevice);
   app.delete('/subdevices/:name', pluginRoute.deleteSubdevice);
+  app.post('/subdevices/:name/reload', pluginRoute.reloadSubdevice);
   app.post('/plugins/:name', pluginRoute.installPlugin);
   app.delete('/plugins/:name', pluginRoute.uninstallPlugin);
   app.put('/plugins/:name', pluginRoute.updatePlugin);
