@@ -1,0 +1,30 @@
+{
+  "curly": true,
+  "eqeqeq": false,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "undef": true,
+  "boss": true,
+  "strict": false,
+  "trailing": true,
+  "loopfunc": true,
+  "browser": true,
+  "devel": true,
+  "node": true,
+  "globals": {
+    "require": true,
+    "expect": true,
+    "describe": true,
+    "it": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "spyOn": true,
+    "runs": true,
+    "waitsFor": true,
+    "jasmine": true,
+    "xdescribe": true,
+    "xit": true
+  }
+}

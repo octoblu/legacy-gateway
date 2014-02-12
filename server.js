@@ -1,5 +1,4 @@
 var db = require('./lib/level');
-var register = require('./lib/register');
 var getToken = require('./lib/getToken');
 var webserver = require('./webserver');
 var sendLanIp = require('./lib/sendLanIp');
@@ -23,12 +22,10 @@ getGatewayId()
 })
 .then(function(storedToken){
   token = storedToken;
-  console.log('registering...');
-  return register(gatewayId, token);
-})
-.then(subdevices.firstTime)
-.then(function(){
   console.log('connecting to skynet...');
+  return subdevices.firstTime();
+})
+.then(function(){
   return connectSkynet(gatewayId, token);
 })
 .then(function(skynetConnection){
