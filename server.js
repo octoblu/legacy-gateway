@@ -14,6 +14,10 @@ var port = process.env.PORT || 8888;
 var conn;
 var subdevicesMessenger;
 
+function updateIp(){
+  sendLanIp(gatewayId, token, port, conn);
+  setTimeout(updateIp, 1000 * 3600);
+}
 
 getGatewayId()
 .then(function(storedId){
@@ -45,14 +49,4 @@ getGatewayId()
   console.log('error initializing this gateway', err);
   process.exit(1);
 });
-
-
-
-function updateIp(){
-  sendLanIp(gatewayId, token, port, conn);
-  setTimeout(updateIp, 1000 * 3600);
-}
-
-
-
 
