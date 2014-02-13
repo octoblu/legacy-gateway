@@ -19,7 +19,7 @@
     "url": "https://github.com/skynetim/gateway/issues"
   },
   "dependencies": {
-    "skynet": "0.0.17",
+    "skynet": "0.0.18",
     "uuid": "~1.4.1",
     "level": "~0.18.0",
     "when": "~2.8.0",
