@@ -21,11 +21,11 @@ function updateIp(){
 
 getGatewayId()
 .then(function(storedId){
-  gatewayId = storedId;
+  gatewayId = storedId.value;
   return getToken();
 })
 .then(function(storedToken){
-  token = storedToken;
+  token = storedToken.value;
   console.log('connecting to skynet...');
   return subdevices.firstTime();
 })

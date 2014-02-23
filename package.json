@@ -21,7 +21,6 @@
   "dependencies": {
     "skynet": "0.0.18",
     "uuid": "~1.4.1",
-    "level": "~0.18.0",
     "when": "~2.8.0",
     "lodash": "~2.4.1",
     "rest": "~1.0.2",
@@ -30,6 +29,7 @@
     "jade": "*",
     "skynet-greeting": "~0.2.0",
     "json-schema": "~0.2.2",
-    "npm": "~1.3.26"
+    "npm": "~1.3.26",
+    "nedb": "~0.10.4"
   }
 }
