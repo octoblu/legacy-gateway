@@ -5,6 +5,7 @@ function resolve(promise, res){
     res.send(200, val);
   },
   function(err){
+    console.log('error resolving call', err);
     res.send(500, err);
   });
 }

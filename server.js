@@ -35,7 +35,7 @@ getGatewayId()
 .then(function(skynetConnection){
   conn = skynetConnection;
   console.log('initializing subdevice instances...');
-  subdevicesMessenger = subdevices.initializeMessenger(conn);
+  subdevicesMessenger = subdevices.initializeMessenger(conn, gatewayId);
   return subdevices.initializeInstances(subdevicesMessenger);
 })
 .then(function(instances){
