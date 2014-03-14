@@ -1,4 +1,3 @@
-var db = require('./lib/level');
 var getToken = require('./lib/getToken');
 var webserver = require('./webserver');
 var sendLanIp = require('./lib/sendLanIp');

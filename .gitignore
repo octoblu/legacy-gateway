@@ -1,4 +1,6 @@
 node_modules
 db
 config.db
+id.db
+subdevices.db
 .DS_Store

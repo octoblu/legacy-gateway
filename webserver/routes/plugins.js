@@ -18,7 +18,7 @@ exports.plugins = function(req, res){
 exports.subdevices = function(req, res){
   subdevices.getRecords()
   .then(function(instances){
-    res.render('subdevices', { title: 'Skynet Gateway Sub-devices', subdevices: instances.value });
+    res.render('subdevices', { title: 'Skynet Gateway Sub-devices', subdevices: instances });
   })
   .otherwise(function(err){
     res.send(500, err);
