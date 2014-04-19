@@ -14,12 +14,13 @@ SS      kk  kk yy   yy nn nnn    eee  tt
 
 Allows you to connect a device (Computer, Raspberry Pi, etc.) to Skynet.im
 
-It also provides a plugin system to connect devices that would otherwise not be able to communicate with Skynet directly
+It also provides a simple [plugin system](./plugins.md) to connect devices that would otherwise not be able to communicate with Skynet directly
 
 
+--------------------
 
-Installing
-----------
+
+## Installing
 
 Clone the git repository, then:
 
@@ -27,6 +28,27 @@ Clone the git repository, then:
 $ npm install
 $ node index.js
 ```
+
+--------------------
+
+
+## Subdevices
+
+A Skynet hub can have subdevices attached to it.  A subdevice is a configured instance of a [plugin](./plugins.md).  It could be anything from a Philips hue lighting system to an arduino to a simple javascript function that just calls a shell script on the skynet hub itself.  
+
+You can have as many subdevices on the hub as you wish, as long as hub has the plugin type installed that you want to use for your subdevice.
+
+
+You message subdevices directly from skynet by sending a normal skynet message to the skynet hub and specifing:
+
+```javascript
+{
+  devices: 'xxxxxx-uuid-of-a-skynet-hub-xxx',
+  subdevice: 'living_Room_Lights',
+  payload: { setState: {lightNumber: 1, on: true} }
+}
+```
+
 
 LICENSE
 -------
