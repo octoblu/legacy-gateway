@@ -14,7 +14,7 @@ Here's an example of what a skynet plugin module would export:
 
 ```javascript
 module.exports = {
-  Plugin : MyPlugin, //required
+  Plugin : Plugin, //required
   messageSchema : messageSchema, //optional
   optionsSchema : optionsSchema, //optional
   getDefaultOptions : getDefaultOptions //optional
@@ -30,7 +30,7 @@ Your constructor function will receive a messenger object and a options object.
 The messenger is used to send and receive messages from skynet, and the options object is used to save
 
 ```javascript
-function MyPlugin(messenger, options){
+function Plugin(messenger, options){
   this.messenger = messenger;
   this.options = options;
   //do more initialization things...
