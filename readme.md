@@ -16,6 +16,8 @@ Allows you to connect a device (Computer, Raspberry Pi, etc.) to Skynet.im
 
 It also provides a simple [plugin system](./plugins.md) to connect devices that would otherwise not be able to communicate with Skynet directly
 
+[Here](https://www.npmjs.org/search?q=skynet-plugin) is a list of known plugins.
+
 
 --------------------
 
@@ -26,7 +28,7 @@ Clone the git repository, then:
 
 ```bash
 $ npm install
-$ node index.js
+$ node server.js
 ```
 
 --------------------
