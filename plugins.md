@@ -112,7 +112,7 @@ var messageSchema = {
 
 ## optionsSchema
 
-This is an optional [json-schema](http://json-schema.org/) object that describes the type of message you want other devices to send to your plugin.
+This is an optional [json-schema](http://json-schema.org/) object that describes the type of options you expect to be configured in devices.db.
 
 For example, if you need your plugin to know which serial device (/dev/tty.usbmodem1411 or COM1, etc.) to forward data to:
 
