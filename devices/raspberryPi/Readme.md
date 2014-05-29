@@ -15,3 +15,6 @@ This directory contains an init script for running Skynet Hub on a Raspberry Pi.
 * Allow the script to be runnable `sudo chmod 755 /etc/init.d/skynethub.sh`
 * Register the hub service for startup: `sudo update-rc.d skynethub.sh defaults`
 * Reboot: `sudo reboot`
+
+
+You can view your hub's skynet uuid in /home/pi/hub/hub.log
