@@ -16,6 +16,8 @@ Allows you to connect a device (Computer, Raspberry Pi, etc.) to Skynet.im
 
 It also provides a simple [plugin system](./plugins.md) to connect devices that would otherwise not be able to communicate with Skynet directly
 
+For example if you wish to install the skynet plugin for the Philips hue, you can simply `npm install skynet-hue` in the directory your hub installed.
+
 [Here](https://www.npmjs.org/search?q=skynet-plugin) is a list of known plugins.
 
 
@@ -41,7 +43,13 @@ A Skynet hub can have subdevices attached to it.  A subdevice is a configured in
 You can have as many subdevices on the hub as you wish, as long as hub has the plugin type installed that you want to use for your subdevice.
 
 
-You message subdevices directly from skynet by sending a normal skynet message to the skynet hub and specifing:
+If you have direct access to your hub, then a simple way to create an subdevice is with a curl command.  For example if you wish to create a subdevice of type skynet-hue:
+
+```
+curl -X POST http://192.168.1.110:8888/subdevices -H "Content-Type: application/json" -d '{"name":"living_Room_Lights", "type":"skynet-hue", "options":{"ipAddress": "192.168.1.115", "apiUsername": "newdeveloper"}}'
+```
+
+You can then message subdevices directly from skynet by sending a normal skynet message to the skynet hub and specifing:
 
 ```javascript
 {
