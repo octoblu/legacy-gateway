@@ -4,14 +4,24 @@ var path = require('path');
 var express = require('express');
 
 var routes = require('./routes');
+var sendLanIp = require('./sendLanIp');
 var pluginRoute = require('./routes/plugins');
 
-function launch(gatewayId, token, port, conn){
+
+
+function launch(conn){
+
+  var port = process.env.PORT || 8888;
+
+  function updateIp(){
+    sendLanIp(conn.uuid, conn.token, port, conn);
+    setTimeout(updateIp, 1000 * 3600);
+  }
 
   function gatewayMiddleware(req, res, next){
     res.locals({
-      token: token,
-      uuid: gatewayId,
+      token: conn.token,
+      uuid: conn.uuid,
       conn: conn
     });
     next();

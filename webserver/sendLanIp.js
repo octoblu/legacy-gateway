@@ -1,5 +1,5 @@
 var ip = require('ip');
-var rest = require('./restCall');
+var rest = require('../lib/restCall');
 
 function sendLanIp(gatewayId, token, port, skynet){
   rest({
