@@ -12,14 +12,11 @@ SS      kk  kk yy   yy nn nnn    eee  tt
 
 ======
 
-Allows you to connect a device (Computer, Raspberry Pi, etc.) to Skynet.im
+Allows you to connect devices with or *without* IP addresses to SkyNet (i.e. Phillips Hue, Belkin WeMo, Raspberry Pi, etc.).
 
-It also provides a simple [plugin system](./plugins.md) to connect devices that would otherwise not be able to communicate with Skynet directly
+The SkyNet Hub has an extensible [plugin](./plugins.md) architecture allowing you to create plugins for devices that we have not had a chance to connect yet.  You can search [NPMJS.org](https://www.npmjs.org/search?q=skynet-plugin) for a list of active SkyNet Hub plugins.
 
-For example if you wish to install the skynet plugin for the Philips hue, you can simply `npm install skynet-hue` in the directory your hub installed.
-
-[Here](https://www.npmjs.org/search?q=skynet-plugin) is a list of known plugins.
-
+For example if you wish to install the SkyNet plugin for the Philips hue, you can simply `npm install skynet-hue` in the directory your hub installed.
 
 --------------------
 
@@ -31,6 +28,12 @@ Clone the git repository, then:
 ```bash
 $ npm install
 $ node server.js
+```
+
+If you would like to connect your SkyNet Hub to a private SkyNet cloud, then:
+
+```bash
+$ env SKYNET_SERVER=127.0.0.1 SKYNET_PORT=3000 node server.js
 ```
 
 --------------------
