@@ -1,20 +1,21 @@
 ```
- SSSSS  kk                            tt
-SS      kk  kk yy   yy nn nnn    eee  tt
- SSSSS  kkkkk  yy   yy nnn  nn ee   e tttt
-     SS kk kk   yyyyyy nn   nn eeeee  tt
- SSSSS  kk  kk      yy nn   nn  eeeee  tttt
-                yyyyy
+
+ OOOOO         tt           bb      lll         
+OO   OO   cccc tt     oooo  bb      lll uu   uu 
+OO   OO cc     tttt  oo  oo bbbbbb  lll uu   uu 
+OO   OO cc     tt    oo  oo bb   bb lll uu   uu 
+ OOOO0   ccccc  tttt  oooo  bbbbbb  lll  uuuu u 
+                                                
 ```
 ======
 
-# Skynet Hub
+# Gateblu
 
 ======
 
-Allows you to connect devices with or *without* IP addresses to SkyNet (i.e. Phillips Hue, Belkin WeMo, Raspberry Pi, etc.).
+Gateblu (SkyNet Hub) allows you to connect devices with or *without* IP addresses to SkyNet (i.e. Phillips Hue, Belkin WeMo, Insteon, Blink1, Raspberry Pi, etc.).
 
-The SkyNet Hub has an extensible [plugin](./plugins.md) architecture allowing you to create plugins for devices that we have not had a chance to connect yet.  You can search [NPMJS.org](https://www.npmjs.org/search?q=skynet-plugin) for a list of active SkyNet Hub plugins.
+The Octoblu gateway has an extensible [plugin](./plugins.md) architecture allowing you to create plugins for devices that we have not had a chance to connect yet.  You can search [NPMJS.org](https://www.npmjs.org/search?q=skynet-plugin) for a list of active SkyNet Hub plugins.
 
 For example if you wish to install the SkyNet plugin for the Philips hue, you can simply `npm install skynet-hue` in the directory your hub installed.
 
@@ -41,18 +42,18 @@ $ env SKYNET_SERVER=127.0.0.1 SKYNET_PORT=3000 node server.js
 
 ## Subdevices
 
-A Skynet hub can have subdevices attached to it.  A subdevice is a configured instance of a [plugin](./plugins.md).  It could be anything from a Philips hue lighting system to an arduino to a simple javascript function that just calls a shell script on the skynet hub itself.  
+An Octoblu gateway can have subdevices attached to it.  A subdevice is a configured instance of a [plugin](./plugins.md).  It could be anything from a Philips hue lighting system to an arduino to a simple javascript function that just calls a shell script on the Octoblu gateway itself.  
 
-You can have as many subdevices on the hub as you wish, as long as hub has the plugin type installed that you want to use for your subdevice.
+You can have as many subdevices on the gateway as you wish, as long as gateway has the plugin type installed that you want to use for your subdevice.
 
 
-If you have direct access to your hub, then a simple way to create an subdevice is with a curl command.  For example if you wish to create a subdevice of type skynet-hue:
+If you have direct access to your gateway, then a simple way to create an subdevice is with a curl command.  For example if you wish to create a subdevice of type skynet-hue:
 
 ```
 curl -X POST http://192.168.1.110:8888/subdevices -H "Content-Type: application/json" -d '{"name":"living_Room_Lights", "type":"skynet-hue", "options":{"ipAddress": "192.168.1.115", "apiUsername": "newdeveloper"}}'
 ```
 
-You can then message subdevices directly from skynet by sending a normal skynet message to the skynet hub and specifing:
+You can then message subdevices directly from skynet by sending a normal skynet message to the Octoblu gateway and specifing:
 
 ```javascript
 {
