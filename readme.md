@@ -1,11 +1,11 @@
 ```
 
- OOOOO         tt           bb      lll         
-OO   OO   cccc tt     oooo  bb      lll uu   uu 
-OO   OO cc     tttt  oo  oo bbbbbb  lll uu   uu 
-OO   OO cc     tt    oo  oo bb   bb lll uu   uu 
- OOOO0   ccccc  tttt  oooo  bbbbbb  lll  uuuu u 
-                                                
+  GGGG          tt           bb      lll         
+ GG  GG   aa aa tt      eee  bb      lll uu   uu 
+GG       aa aaa tttt  ee   e bbbbbb  lll uu   uu 
+GG   GG aa  aaa tt    eeeee  bb   bb lll uu   uu 
+ GGGGGG  aaa aa  tttt  eeeee bbbbbb  lll  uuuu u 
+                                                                                               
 ```
 ======
 
