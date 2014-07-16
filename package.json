@@ -30,6 +30,6 @@
     "json-schema": "~0.2.2",
     "npm": "~1.3.26",
     "nedb": "~0.10.4",
-    "skynet-greeting": "~0.6.0"
+    "skynet-greeting": "*"
   }
 }
