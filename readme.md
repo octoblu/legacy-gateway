@@ -64,6 +64,114 @@ You can then message subdevices directly from skynet by sending a normal skynet 
 ```
 
 
+--------------------
+
+
+## gatewayConfig API
+
+Gateblu has a websocket API called gatewayConfig that allows you to query, configure, install, and uninstall plugins and subdevices.  
+
+Once you are connected to Meshblu (formerly SkyNet.im), you can call gatewayConfig with the following methods:
+
+configurationDetails - Returns an array of all plugins and subdevices installed on the gateway
+
+getSubdevices - Returns an array of all subdevices installed on the gateway
+createSubdevice - Creates a subdevice on the gateway
+updateSubdevice - Updates a subdevice on the gateway
+deleteSubdevice - Deletes a subdevice on the gateway
+reloadSubdevice - Reloads all subdevices on the gateway
+
+getPlugins - Returns an array of all plugins installed on the gateway
+installPlugin - Installs a plugin on the gateway
+updatePlugin - Updates a plugin on the gateway
+uninstallPlugin - Uninstalls a plugin on the gateway
+
+getDefaultOptions - Returns an array of default options for configuring your subdevice
+
+Here are sample gatewayConfig websocket API calls:
+
+```javascript
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'configurationDetails'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'getSubdevices'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'createSubdevice',
+  type: 'skynet-greeting',
+  name: 'hellos',
+  options: {"greetingPrefix": 'hello'}
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'updateSubdevice',
+  type: 'skynet-greeting',
+  name: 'hellos',
+  options: {"greetingPrefix": 'yes'}
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'deleteSubdevice',
+  type: 'skynet-greeting',
+  name: 'hellos'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'reloadSubdevice'
+  name: 'greeting'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'getPlugins'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'installPlugin',
+  name: 'skynet-insteon'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'updatePlugin',
+  name: 'skynet-insteon'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'uninstallPlugin',
+  name: 'skynet-insteon'
+}, function(results){ console.log(results); });
+
+conn.gatewayConfig({
+  uuid:  'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX',
+  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  method: 'getDefaultOptions',
+  name: 'skynet-hue'
+}, function(results){ console.log(results); });
+```
+
+
 LICENSE
 -------
 
