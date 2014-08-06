@@ -73,20 +73,17 @@ Gateblu has a websocket API called gatewayConfig that allows you to query, confi
 
 Once you are connected to Meshblu (formerly SkyNet.im), you can call gatewayConfig with the following methods:
 
-configurationDetails - Returns an array of all plugins and subdevices installed on the gateway
-
-getSubdevices - Returns an array of all subdevices installed on the gateway
-createSubdevice - Creates a subdevice on the gateway
-updateSubdevice - Updates a subdevice on the gateway
-deleteSubdevice - Deletes a subdevice on the gateway
-reloadSubdevice - Reloads all subdevices on the gateway
-
-getPlugins - Returns an array of all plugins installed on the gateway
-installPlugin - Installs a plugin on the gateway
-updatePlugin - Updates a plugin on the gateway
-uninstallPlugin - Uninstalls a plugin on the gateway
-
-getDefaultOptions - Returns an array of default options for configuring your subdevice
+* configurationDetails - Returns an array of all plugins and subdevices installed on the gateway
+* getSubdevices - Returns an array of all subdevices installed on the gateway
+* createSubdevice - Creates a subdevice on the gateway
+* updateSubdevice - Updates a subdevice on the gateway
+* deleteSubdevice - Deletes a subdevice on the gateway
+* reloadSubdevice - Reloads all subdevices on the gateway
+* getPlugins - Returns an array of all plugins installed on the gateway
+* installPlugin - Installs a plugin on the gateway
+* updatePlugin - Updates a plugin on the gateway
+* uninstallPlugin - Uninstalls a plugin on the gateway
+* getDefaultOptions - Returns an array of default options for configuring your subdevice
 
 Here are sample gatewayConfig websocket API calls:
 
