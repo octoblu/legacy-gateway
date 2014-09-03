@@ -11,7 +11,7 @@ var pluginRoute = require('./routes/plugins');
 
 function launch(conn){
 
-  var port = process.env.PORT || 8888;
+  var port = process.env.GATEBLU_PORT || 8888;
 
   function updateIp(){
     sendLanIp(conn.uuid, conn.token, port, conn);

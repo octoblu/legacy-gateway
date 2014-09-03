@@ -34,7 +34,7 @@ $ node server.js
 If you would like to connect your SkyNet Hub to a private SkyNet cloud, then:
 
 ```bash
-$ env SKYNET_SERVER=127.0.0.1 SKYNET_PORT=3000 node server.js
+$ env SKYNET_SERVER=127.0.0.1 SKYNET_PORT=3000 GATEBLU_PORT=8888 node server.js
 ```
 
 --------------------
