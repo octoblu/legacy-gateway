@@ -66,7 +66,7 @@ function launch(conn){
     process.exit(1);
   });
   server.listen(app.get('port'), function(){
-    console.log('Skyent Gateway webserver listening at http://localhost:' + app.get('port'));
+    console.log('Skynet Gateway webserver listening at http://localhost:' + app.get('port'));
   });
 
 
