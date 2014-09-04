@@ -11,7 +11,7 @@ var pluginRoute = require('./routes/plugins');
 
 function launch(conn){
 
-  var port = process.env.PORT || 8888;
+  var port = process.env.GATEBLU_PORT || 8888;
 
   function updateIp(){
     sendLanIp(conn.uuid, conn.token, port, conn);
@@ -66,7 +66,7 @@ function launch(conn){
     process.exit(1);
   });
   server.listen(app.get('port'), function(){
-    console.log('Skyent Gateway webserver listening at http://localhost:' + app.get('port'));
+    console.log('Skynet Gateway webserver listening at http://localhost:' + app.get('port'));
   });
 
 
