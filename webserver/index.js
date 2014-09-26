@@ -69,6 +69,15 @@ function launch(conn){
     console.log('Skynet Gateway webserver listening at http://localhost:' + app.get('port'));
   });
 
+  try{
+    //optional dependency for gateblue that can broadcast its presence locally.
+    var mdns = require('mdns');
+    var ad = mdns.createAdvertisement(mdns.tcp('gateblu'), parseInt(port, 10));
+    ad.start();
+  }catch(mdnsE){
+    //console.log('mdns', mdnsE);
+  }
+
 
 }
 
