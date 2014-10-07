@@ -1,22 +1,23 @@
 {
-  "name": "skynet-gateway",
+  "name": "gateblu",
   "version": "0.1.0",
-  "description": "Skynet.im gateway",
+  "description": "Octoblu (Skynet.im) gateway",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/skynetim/gateway.git"
+    "url": "git://github.com/octoblu/gateblu.git"
   },
   "keywords": [
     "skynet"
   ],
+  "main": "./launcher",
   "author": "skynet.im",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/skynetim/gateway/issues"
+    "url": "https://github.com/octoblu/gateblu/issues"
   },
   "dependencies": {
     "skynet": "*",

@@ -6,16 +6,22 @@ var getGatewayId = require('./lib/getGatewayId');
 var connectSkynet = require('./lib/connectSkynet');
 
 
-function launch(){
+function launch(options){
+    options = options || {};
 
-    when.join(getGatewayId(), getToken(), subdevices.firstTime())
+    return when.join(getGatewayId(), getToken(), subdevices.firstTime())
     .spread(connectSkynet)
     .then(function(skynetConnection){
       console.log('initializing subdevice instances...');
       var subdevicesMessenger = subdevices.initializeMessenger(skynetConnection);
       return subdevices.initializeInstances(subdevicesMessenger).yield(skynetConnection);
     })
-    .then(webserver)
+    .then(function(conn){
+      if(options.skipWebserver){
+        return conn;
+      }
+      return webserver(conn);
+    })
     .catch(function(err){
       console.log('error initializing this gateway', err);
       process.exit(1);

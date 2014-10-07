@@ -1,4 +1,3 @@
-var when = require('when');
 var http = require('http');
 var path = require('path');
 var express = require('express');
@@ -78,7 +77,7 @@ function launch(conn){
     //console.log('mdns', mdnsE);
   }
 
-
+  return conn;
 }
 
 
